@@ -236,6 +236,7 @@
      String ShortestLabel = "Error";
      String LongestEdgeLabel = "Error";
      String ShortestEdgeLabel = "Error";
+     int Edgecount = 0;
  
  
      for(Vertex v : g.vertices){
@@ -271,6 +272,7 @@
     for(Vertex vert: g.vertices){
             Edge e = vert.head;
             while(e != null){
+                Edgecount++;
                 if (e.length > longestEdge){
                     LongestEdgeLabel = e.label;
                     longestEdge = e.length;
@@ -293,6 +295,8 @@
      System.out.println(LongestLabel);
      System.out.println(LongestEdgeLabel);
      System.out.println(ShortestEdgeLabel);
+     System.out.println(Edgecount);
+     System.out.println(g.numEdges);
 
  
      
