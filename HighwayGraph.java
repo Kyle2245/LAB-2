@@ -226,12 +226,16 @@
      double maxLat = -100;
      double longest = 0;
      double shortest = 100;
+     double longestEdge = 0;
+     double shortestEdge = 100;
      String Northmost = "Error";
      String Southmost = "Error";
      String Eastmost = "Error";
      String Westmost = "Error";
      String LongestLabel = "Error";
      String ShortestLabel = "Error";
+     String LongestEdgeLabel = "Error";
+     String ShortestEdgeLabel = "Error";
  
  
      for(Vertex v : g.vertices){
@@ -263,6 +267,22 @@
              shortest = v.label.length();
              ShortestLabel = v.label;
          }
+
+    for(Vertex vert: g.vertices){
+            Edge e = vert.head;
+            while(e != null){
+                if (e.length > longestEdge){
+                    LongestEdgeLabel = e.label;
+                    longestEdge = e.length;
+                }
+                if(e.length < shortestEdge){
+                    ShortestEdgeLabel = e.label;
+                    shortestEdge = e.length;
+                }
+                e = e.next;
+
+            }
+    }
  
      }
      System.out.println(Northmost);
@@ -271,6 +291,9 @@
      System.out.println(Westmost);
      System.out.println(ShortestLabel);
      System.out.println(LongestLabel);
+     System.out.println(LongestEdgeLabel);
+     System.out.println(ShortestEdgeLabel);
+
  
      
      }
