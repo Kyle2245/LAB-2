@@ -255,12 +255,12 @@
              minLon = v.point.lng;
              Westmost=v.label;
          }
-         if(v.head.length > longest){
-             longest = v.head.length;
+         if(v.label.length() > longest){
+             longest = v.label.length();
              LongestLabel = v.label;
          }
-         if(v.head.length < shortest){
-             shortest = v.head.length;
+         if(v.label.length() < shortest){
+             shortest = v.label.length();
              ShortestLabel = v.label;
          }
  
